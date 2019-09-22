@@ -1,4 +1,4 @@
-package com.mystyle.product.management.intercomm;
+package com.mystyle.product.management.feignclient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

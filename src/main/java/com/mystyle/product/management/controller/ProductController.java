@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mystyle.product.management.intercomm.LogClient;
-import com.mystyle.product.management.intercomm.UserClient;
+import com.mystyle.product.management.feignclient.LogClient;
+import com.mystyle.product.management.feignclient.UserClient;
 import com.mystyle.product.management.model.Transaction;
 import com.mystyle.product.management.service.ProductService;
 
@@ -43,12 +43,12 @@ public class ProductController {
 	@Value("${spring.application.name}")
 	private String serviceId;
 
-	@GetMapping("/service/port")
+	@GetMapping("/port")
 	public String getPort() {
 		return "Service is working at port : " + env.getProperty("local.server.port");
 	}
 
-	@GetMapping("/service/instances")
+	@GetMapping("/instances")
 	public ResponseEntity<?> getInstances() {
 		return ResponseEntity.ok(discoveryClient.getInstances(serviceId));
 	}

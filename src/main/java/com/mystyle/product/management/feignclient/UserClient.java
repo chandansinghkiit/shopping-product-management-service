@@ -1,4 +1,4 @@
-package com.mystyle.product.management.intercomm;
+package com.mystyle.product.management.feignclient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +9,6 @@ import java.util.List;
 @FeignClient("shopping-user-service")
 public interface UserClient {
 
-    @RequestMapping(method = RequestMethod.POST, value = "/service/user/names", consumes = "application/json")
+    @RequestMapping(method = RequestMethod.POST, value = "/service/names", consumes = "application/json")
     List<String> getUsers(@RequestBody List<Long> userIdList);
 }
