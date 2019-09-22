@@ -10,4 +10,5 @@ public interface LogClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/service/popular", consumes = "application/json")
     List<Long> getPopularProduct();
+    
 }
