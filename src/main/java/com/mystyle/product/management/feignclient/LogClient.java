@@ -7,7 +7,6 @@ import java.util.List;
 
 @FeignClient("shopping-log-service")
 public interface LogClient {
-
     @RequestMapping(method = RequestMethod.GET, value = "/service/popular", consumes = "application/json")
     List<Long> getPopularProduct();
     
